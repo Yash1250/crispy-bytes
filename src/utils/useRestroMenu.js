@@ -10,6 +10,7 @@ const useRestroMenu = (resId)=>{
 
     const fetchRestroMenu = async ()=>{
         let data = await fetch(RESTRO_MENU_API + resId);
+        // console.log(data);
         let json = await data.json();
         setRestroMenuData(json.data.cards);
     }

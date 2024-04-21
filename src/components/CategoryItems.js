@@ -37,18 +37,18 @@ const CategoryItems = ({ items , parent}) => {
               </div>)}
              
             </div>
-            <div className="w-3/12 px-4 relative">
+            <div className="w-44 pl-4 relative">
               <img
                 className="w-36 h-36 rounded-lg shadow-lg"
                 src={IMG_URL + imageId}
               />
               {parent == "Cart" ? (<h2
                 onClick={() => removeItemsFromCartHandeler(index)}
-                className="cursor-pointer absolute bg-white text-red-600 font-bold m-2 p-1 w-28 text-center shadow-xl rounded-lg top-[7.3rem] left-6 hover:text-orange-600">
+                className="cursor-pointer absolute bg-white text-red-600 font-bold m-2 p-1 w-28 text-center shadow-xl rounded-lg top-[7.3rem] left-6 hover:text-orange-600 max-[520px]:w-[5.3rem]">
                 REMOVE
               </h2>) :  (<h2
                 onClick={() => addItemsToCartHandeler(item)}
-                className="cursor-pointer absolute bg-white text-green-600 font-bold m-2 p-1 w-28 text-center shadow-xl rounded-lg top-[7.3rem] left-6 hover:text-orange-600">
+                className="cursor-pointer absolute bg-white text-green-600 font-bold m-2 p-1 w-28 text-center shadow-xl rounded-lg top-[7.3rem] left-6 hover:text-orange-600 max-[520px]:w-[5.3rem]">
                 ADD
               </h2>)}
               

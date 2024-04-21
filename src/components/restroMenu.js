@@ -30,15 +30,17 @@ const RestroMenu = () => {
     costForTwoMessage,
     totalRatings,
   } = restroMenuData[2]?.card?.card?.info;
-  console.log(restroMenuData[2]?.card?.card?.info);
-  let menu = restroMenuData[4]?.groupedCard?.cardGroupMap?.REGULAR;
-  menu =
+  // console.log(restroMenuData[2]?.card?.card?.info);
+  console.log(restroMenuData);
+  let menu = restroMenuData[4]?.groupedCard?.cardGroupMap?.REGULAR ? restroMenuData[4]?.groupedCard?.cardGroupMap?.REGULAR : restroMenuData[5]?.groupedCard?.cardGroupMap?.REGULAR;
+  console.log(menu);
+ let correctMenu =
     menu?.cards[1]?.card?.card?.itemCards == undefined
       ? menu?.cards[4]?.card?.card?.itemCards
       : menu?.cards[1]?.card?.card?.itemCards;
 
   let data =
-    restroMenuData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+  menu?.cards.filter(
       (card) =>
         card?.card?.card["@type"] ==
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
@@ -70,15 +72,15 @@ const RestroMenu = () => {
             );
           })}
         </div>
-        <div className="flex w-80 fixed right-12 top-[80vh] bg-white shadow-lg rounded-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-orange-300 duration-300 ">
+        <div className="flex w-80 absolute right-0 top-[8vh] bg-white shadow-lg rounded-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-orange-300 duration-300 max-[980px]:hidden">
           <div className="w-2 bg-orange-600"></div>
-          <div className="flex items-center px-2 py-3">
+          <div className="flex items-center px-2 py-3 justify-center">
             <img
               className="w-12 h-12 object-cover rounded-full"
               src={IMG_URL + cloudinaryImageId}
             />
             <div className="mx-3">
-              <h2 className="text-xl font-semibold text-gray-800 overflow-hidden truncate">
+              <h2 className="text-xl font-semibold text-gray-800 overflow-hidden truncate w-60">
                 {name}
               </h2>
               <Link to="/cart"><p className="text-gray-600 cursor-pointer hover:text-white">

@@ -11,7 +11,7 @@ const RestrountCard = ({
   sla,
 }) => {
   return (
-    <div className="w-64 h-780 overflow-hidden p-5 shadow-xl flex flex-col items-center rounded-lg transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110  duration-300">
+    <div className="w-64 h-780 overflow-hidden p-5 shadow-xl flex flex-col items-center rounded-lg transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110  duration-300">
       <img
         src={IMG_URL + cloudinaryImageId}
         alt="name"

@@ -10,3 +10,6 @@
 # IDE and editor directories
 .vscode
 .idea
+
+# Parcel cache directory
+.parcel-cache

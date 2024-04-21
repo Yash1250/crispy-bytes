@@ -24,12 +24,22 @@ let Body = () => {
     // console.log(data);
     let json = await data.json();
     // console.log(json?.data?.cards);
-    setNewRestroList(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setRestroListAPI(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    if(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants){
+      setNewRestroList(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      );
+      setRestroListAPI(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      );
+    }
+    else {
+      setNewRestroList(
+        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      );
+      setRestroListAPI(
+        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      );
+    }
   };
 
   function filterTopRestro(newRestroList) {
@@ -51,12 +61,12 @@ let Body = () => {
   }
   return (
     <>
-      <div className="mb-10 ">
-        <div className="flex justify-center mt-6">
+      <div className="mb-10 flex flex-col items-center">
+        <div className="flex justify-center mt-6 max-[539px]:w-80 max-[539px]:h-10">
           
           <div className="mr-6 w-96 flex border-orange-600 border-solid border-2 rounded-md overflow-hidden">
             <input
-              className=" px-4 py-2 w-60 rounded-lg focus:outline-none flex-1"
+              className=" px-4 py-2 w-60 rounded-lg focus:outline-none flex-1 max-[539px]:w-40"
               onChange={(e) => {
                 setInputValue(e.target.value);
               }}
@@ -74,11 +84,11 @@ let Body = () => {
                   setShowNoRestroFound(false);
                 }
               }}
-              className="px-4 py-2 bg-orange-600 text-white">
+              className="px-4 py-2 bg-orange-600 text-white ">
               <IoSearch />
             </button>
           </div>
-          <div className=" bg-orange-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-gray-400">
+          <div className=" bg-orange-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-gray-400 max-[539px]:text-xs max-[539px]:flex max-[539px]:items-center">
             <button
               onClick={() => {
                 setNewRestroList(filterTopRestro(newRestroList));

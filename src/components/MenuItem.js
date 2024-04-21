@@ -3,14 +3,14 @@
 import CategoryItems from "./CategoryItems";
 
 const MenuItem = ({ data , showItems , setShowIndex }) => {
-  // console.log(data);
+  console.log(data);
   let { title, itemCards } = data;
   const handler = ()=>{
     setShowIndex();
   }
   return (
     <>
-      <div className="w-6/12 bg-gray-200 mx-auto">
+      <div className="w-[45rem] bg-gray-200 mx-auto max-[800px]:w-[30rem] max-[520px]:w-[20rem]">
             <div className="mx-auto my-4 bg-white w-12/12 p-4 shadow-lg" key={title}>
               <div className="flex justify-between cursor-pointer" onClick={handler}>
                 <span className="font-bold text-xl">
