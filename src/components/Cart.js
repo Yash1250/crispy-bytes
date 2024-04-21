@@ -22,7 +22,7 @@ const Cart = () => {
   return (
     <>
     {!cartItems.length ? (<EmptyCart/>) : ( 
-       <div className="flex gap-16 bg-gray-200 min-h-[84vh]">
+       <div className="flex gap-16 bg-gray-200 min-h-[84vh] overflow-hidden">
         <div className="w-6/12 ml-40">
           <div className="mx-auto my-4 bg-white w-12/12 p-4 shadow-lg">
             <div className="text-center">

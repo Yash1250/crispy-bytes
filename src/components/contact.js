@@ -8,7 +8,7 @@ const Contact = ()=>{
             <h1 className="font-bold text-2xl text-gray-800">CONTACT</h1>
             <div className="bg-orange-600 w-14 h-1"></div>
             <p className="text-orange-600 m-2 font-semibold">Get in Touch</p>
-            <div className="fixed right-0  flex flex-col gap-4 mr-6 ">
+            <div className="fixed right-0  flex flex-col gap-4 mr-6 max-[700px]:hidden">
               <a href="https://github.com/Yash1250" target="_blank"><FaGithub className="bg-orange-500 text-white w-10 h-10 p-2 rounded-full  cursor-pointer"/></a>
               <a href="https://www.linkedin.com/in/yash-mehta-ym/" target="_blank"><FaLinkedin className="bg-orange-500 text-white w-10 h-10 p-2 rounded-full cursor-pointer"/></a>
               <a href="mailto:mehtayashkuleri503@gmail.com"><SiGmail className="bg-orange-500 text-white w-10 h-10 p-2 rounded-full cursor-pointer"/></a>
