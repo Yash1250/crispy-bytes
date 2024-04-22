@@ -44,7 +44,7 @@ const CategoryItems = ({ items , parent}) => {
               />
               {parent == "Cart" ? (<h2
                 onClick={() => removeItemsFromCartHandeler(index)}
-                className="cursor-pointer absolute bg-white text-red-600 font-bold m-2 p-1 w-28 text-center shadow-xl rounded-lg top-[7.3rem] left-6 hover:text-orange-600 max-[520px]:w-[5.3rem]">
+                className="cursor-pointer absolute bg-white text-red-600 font-bold m-2 p-1 w-28 text-center shadow-xl rounded-lg top-[7.3rem] left-6 hover:text-orange-600 max-[730px]:w-[5.3rem] max-[476px]:w-[3.8rem] max-[476px]:text-[0.7rem] max-[476px]:p-[0.4rem]">
                 REMOVE
               </h2>) :  (<h2
                 onClick={() => addItemsToCartHandeler(item)}

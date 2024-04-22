@@ -15,7 +15,6 @@ const RestroMenu = () => {
   let cartItems = useSelector((store) => store?.cart?.items);
 
   const [showIndex, setShowIndex] = useState(0);
-  //   console.log(prevShowIdx , showIndex);
 
   const restroMenuData = useRestroMenu(resId);
 
@@ -30,10 +29,8 @@ const RestroMenu = () => {
     costForTwoMessage,
     totalRatings,
   } = restroMenuData[2]?.card?.card?.info;
-  // console.log(restroMenuData[2]?.card?.card?.info);
-  console.log(restroMenuData);
+
   let menu = restroMenuData[4]?.groupedCard?.cardGroupMap?.REGULAR ? restroMenuData[4]?.groupedCard?.cardGroupMap?.REGULAR : restroMenuData[5]?.groupedCard?.cardGroupMap?.REGULAR;
-  console.log(menu);
  let correctMenu =
     menu?.cards[1]?.card?.card?.itemCards == undefined
       ? menu?.cards[4]?.card?.card?.itemCards
@@ -45,7 +42,6 @@ const RestroMenu = () => {
         card?.card?.card["@type"] ==
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  // console.log(data);
   return (
     <>
       <div className="text-center font-medium text-lg p-4 relative">

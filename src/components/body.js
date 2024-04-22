@@ -20,28 +20,40 @@ let Body = () => {
   }, []);
 
   const fetchApi = async () => {
-    let data = await fetch(RESTRO_LIST_API);
-    // console.log(data);
-    let json = await data.json();
-    // console.log(json?.data?.cards);
-    if(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants){
-      setNewRestroList(
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      );
-      setRestroListAPI(
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      );
-    }
-    else {
-      setNewRestroList(
-        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      );
-      setRestroListAPI(
-        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      );
+    try {
+      let data = await fetch(RESTRO_LIST_API);
+      if (!data.ok) {
+        throw new Error(`Failed to fetch data from API: ${data.statusText}`);
+      }
+      let json = await data.json();
+      if (
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      ) {
+        setNewRestroList(
+          json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
+        setRestroListAPI(
+          json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
+      } else {
+        setNewRestroList(
+          json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
+        setRestroListAPI(
+          json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
+      }
+    } catch (error) {
+      console.log("Error fetching data:", error);
+      // You can set state or perform other error handling actions here
     }
   };
-
+  
   function filterTopRestro(newRestroList) {
     return newRestroList.filter((elem) => {
       return elem.info.avgRating >= 4;

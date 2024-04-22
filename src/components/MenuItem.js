@@ -3,7 +3,6 @@
 import CategoryItems from "./CategoryItems";
 
 const MenuItem = ({ data , showItems , setShowIndex }) => {
-  console.log(data);
   let { title, itemCards } = data;
   const handler = ()=>{
     setShowIndex();

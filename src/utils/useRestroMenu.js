@@ -8,12 +8,20 @@ const useRestroMenu = (resId)=>{
         fetchRestroMenu();
     }, []);
 
-    const fetchRestroMenu = async ()=>{
-        let data = await fetch(RESTRO_MENU_API + resId);
-        // console.log(data);
-        let json = await data.json();
-        setRestroMenuData(json.data.cards);
-    }
+    const fetchRestroMenu = async () => {
+        try {
+          let data = await fetch(RESTRO_MENU_API + resId);
+          if (!data.ok) {
+            throw new Error(`Failed to fetch data from API: ${data.statusText}`);
+          }
+          let json = await data.json();
+          setRestroMenuData(json.data.cards);
+        } catch (error) {
+          console.log("Error fetching restaurant menu:", error);
+          setRestroMenuData(null);
+        }
+      };
+      
 
 
     return restroMenuData;
