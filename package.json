@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
-    "bulid": "parcel build index.html"
+    "build": "parcel build index.html"
   },
   "keywords": [],
   "author": "",

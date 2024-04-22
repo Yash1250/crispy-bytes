@@ -25,7 +25,7 @@ const Cart = () => {
         <div className="w-6/12 max-[990px]:w-[29rem] max-[730px]:w-72 max-[476px]:w-56">
           <div className="mx-auto my-4 bg-white w-[34rem] p-4 shadow-lg max-[990px]:w-[29rem] max-[730px]:w-72 max-[476px]:w-56">
             <div className="text-center">
-              <h2 className="font-bold text-xl max-[476px]:text-[1rem]">Items Details</h2>
+              <h2 className="font-bold text-xl max-[460px]:text-[1rem]">Items Details</h2>
             </div>
 
             <CategoryItems items={cartItems} parent="Cart" />
