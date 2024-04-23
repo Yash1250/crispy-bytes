@@ -73,7 +73,7 @@ let Body = () => {
   }
   return (
     <>
-      <div className="mb-10 flex flex-col items-center">
+      <div className="mb-10 flex flex-col items-center min-h-[88vh]">
         <div className="flex justify-center mt-6 max-[539px]:w-80 max-[539px]:h-10">
           
           <div className="mr-6 w-96 flex border-orange-600 border-solid border-2 rounded-md overflow-hidden">
